@@ -6,17 +6,18 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 19:18:25 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/27 16:43:27 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/27 18:41:37 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c);
-int rush(int x, int y);
+void	ft_putchar(char c);
 
-int	main()
+void	rush(int x, int y);
+
+int	main(void)
 {
-rush(5,1);
+	rush (5, 1);
 	return (0);
 }
