@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 20:21:37 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/27 23:44:14 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/08/28 18:24:47 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/08/29 00:08:15 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>	
+//#include <stdio.h>
 
-void	ft_is_negative(int n)
+void	ft_ft(int *nbr)
 {
-	if (n >= 0)
-	{
-		write(1, "P", 1);
-	}
-	else
-	{
-		write(1, "N", 1);
-	}
+	*nbr = 42;
 }
 
-//int	main(void)
-//{
-//	ft_is_negative(-10);
-//}
+/*int	main(void)
+{
+	int	c;
+	int	*ponteiro;
+
+	c = 10;
+	ponteiro = &c;
+	ft_ft(ponteiro);
+	printf("%d\n", c);
+}*/

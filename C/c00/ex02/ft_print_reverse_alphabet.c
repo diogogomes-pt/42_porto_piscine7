@@ -6,7 +6,7 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:13:15 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/24 20:16:11 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/27 23:43:42 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_print_reverse_alphabet(void)
 	}
 }
 
-int	main(void)
-{
-	ft_print_reverse_alphabet();
-}
+//int	main(void)
+//{
+//	ft_print_reverse_alphabet();
+//}

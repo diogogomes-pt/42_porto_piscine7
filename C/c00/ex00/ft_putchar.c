@@ -6,7 +6,7 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:46:29 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/24 20:54:32 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/27 23:41:59 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	main(void)
-{
-	ft_putchar('p');
-}
+//int	main(void)
+//{
+//	ft_putchar('p');
+//}
