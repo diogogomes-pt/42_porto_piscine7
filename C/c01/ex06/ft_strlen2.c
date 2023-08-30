@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:13:13 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/29 19:26:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/08/29 17:07:39 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/08/29 17:14:47 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
 int	ft_strlen(char *str)
 {
-	int	c;
-
-	c = 0;
-	while(*str != '\0')
+	int	i;
+	
+	i = '0';
+	while(str[i] != '\n')
 	{
-		c++;
-		str++;
+		i++;
 	}
-	return (c);
+	write (1, &i, 1);
+	return (0);
 }
 
 int	main(void)
 {
-	printf("Tamanho: %d\n", ft_strlen("Porto"));
+	ft_strlen("porto");
 }

@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:13:13 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/29 19:26:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/08/29 19:28:20 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/08/29 20:21:10 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int	c;
+	int	temp;
+	int	i;
 
-	c = 0;
-	while(*str != '\0')
+	i = 0;
+	while (i < (size / 2))
 	{
-		c++;
-		str++;
+		temp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = temp;
+		i++;
 	}
-	return (c);
 }
 
 int	main(void)
 {
-	printf("Tamanho: %d\n", ft_strlen("Porto"));
+	int s;
+	int m[] = {1, 2, 3, 4, 5, 6, 7};
+	
+	s = 7;
+	ft_rev_int_tab(m, s);
+	for (int i = 0; i < s; i++) 
+	{
+		printf("%d ", m[i]);
+	}
+    	return 0;
 }
+

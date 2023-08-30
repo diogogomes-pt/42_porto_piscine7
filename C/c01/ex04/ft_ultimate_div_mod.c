@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod (copy).c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 23:39:05 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/29 00:10:22 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:31:28 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
@@ -23,7 +23,7 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*b = temp2;
 }
 
-/*int	main(void)
+int	main(void)
 {
 	int	i;
 	int	j;
@@ -39,4 +39,4 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	ft_ultimate_div_mod(a, b);
 	printf("Divisao = %d\n", *a);
 	printf("Resto = %d", *b);
-}*/
+}
