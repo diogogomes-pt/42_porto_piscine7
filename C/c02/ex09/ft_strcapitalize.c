@@ -6,7 +6,7 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 23:06:05 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/31 00:25:01 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/31 03:01:47 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,30 @@
 char	*ft_strcapitalize(char *str)
 {
 	int		i;
-	int		next;
-	char	c;
+	int		c;
 
 	i = 0;
-	next = 1;
-	while (*(str + i) != '\0')
+	c = 1;
+	while (str[i] != '\0')
 	{
-		c = *(str + i);
-		if (next == 1 && c >= 'a' && c <= 'z')
+		if (c == 1 && str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
-		else if (next == 0 && c >= 'A' && c <= 'Z')
+		else if (c == 0 && str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
-		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 122)
-			next = 1;
+		if (str[i] < '0' || (str[i] > '9' && str[i] < 'A') || str[i] > 122)
+			c = 1;
+		else if (str[i] > 'Z' && str[i] < 'a')
+			c = 1;
 		else
-			next = 0;
+			c = 0;
 		i++;
 	}
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	c[] = "ola, tudo bem? 42palAvras quarenta-e-duas; cinquenta+e+um";
 	
 	printf("%s",ft_strcapitalize(c)); 
-}
+}*/
