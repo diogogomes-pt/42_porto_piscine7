@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 21:57:00 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/31 20:28:48 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/08/31 16:15:31 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/08/31 22:13:10 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	tam;
 
 	i = 0;
+	tam = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (i < size)
+		{
+			dest[i] = src[i];
+		}
 		i++;
+		tam++;
 	}
-	dest[i] = '\0'; 
-	return (dest);
+	dest[i] = '\0';
+	return (tam);
 }
 
 /*int	main(void)
 {
-	char	destino[5];
-
-	ft_strcpy(destino, "porto");
-	printf("%s", destino);
+	int	size;
+	char	*dest;
+	char	*src;
+	
+	size = 3;
+	src = "portodafagag";
+	printf("%d\n", ft_strlcpy(dest, src, size));
+	printf("%s", dest);
 }*/

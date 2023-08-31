@@ -6,14 +6,14 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:56:07 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/30 23:05:08 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:12:46 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 char	*ft_strupcase(char *str)
-{	
+{
 	int	i;
 
 	i = 0;
@@ -28,9 +28,9 @@ char	*ft_strupcase(char *str)
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char s[] ="aAa";
 
 	printf("%s", ft_strupcase(s));
-}
+}*/

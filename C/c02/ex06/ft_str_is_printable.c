@@ -6,11 +6,11 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:46:31 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/30 20:55:24 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:15:41 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
 {
@@ -27,7 +27,7 @@ int	ft_str_is_printable(char *str)
 	return (1);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d", ft_str_is_printable("diogo\n123"));
-}
+}*/

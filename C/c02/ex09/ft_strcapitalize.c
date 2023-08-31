@@ -6,11 +6,11 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 23:06:05 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/31 03:20:50 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:05:02 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 char	*ft_strcapitalize(char *str)
 {
