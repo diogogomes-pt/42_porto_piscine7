@@ -6,11 +6,11 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:28:20 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/08/29 20:21:10 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/09/01 21:09:44 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 void	ft_rev_int_tab(int *tab, int size)
 {
@@ -27,7 +27,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int s;
 	int m[] = {1, 2, 3, 4, 5, 6, 7};
@@ -39,5 +39,4 @@ int	main(void)
 		printf("%d ", m[i]);
 	}
     	return 0;
-}
-
+}*/
