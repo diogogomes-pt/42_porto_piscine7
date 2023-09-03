@@ -6,53 +6,51 @@
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 17:48:40 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/03 16:01:09 by dgomes-a         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:52:14 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+unsigned int	len(char *str)
 {
-	unsigned int counter;
-
-	counter = 0;
-	while (*str != '\0')
+	unsigned int i;
+	
+	i = 0;
+	while (str[i] != '\0')
 	{
-		counter++;
-		str++;
+		i++;
 	}
-	return (counter);
+	return (i);
 }
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
+	unsigned int tam;
 	unsigned int c;
-	unsigned int d;
 
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	c = ft_strlen(dest);
-	d = 0;
-	while (src[d] != '\0' && c + 1 < size)
+	if (size <= len(dest))
+		return (len(src) + size);
+	tam = len(dest);
+	c = 0;
+	while (src[c] != '\0' && tam + 1 < size)
 	{
-		dest[c] = src[d];
+		dest[tam] = src[c];
 		c++;
-		d++;
+		tam++;
 	}
-	dest[c] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[d]));
+	dest[tam] = '\0';
+	return (len(dest)  + len(&src[c]));
 }
 
 #include <stdio.h>
 int		main(void)
 {
-	char dest[20] = "123";
-	char src[] = "4567890";
-	unsigned int size = 6;
-	unsigned int result;
+	char dest[15] = "1234";
+	char src[] = "5678";
+	unsigned int size = 7;
+	unsigned int tamanho;
 
-	printf("-----\ndest = %s\nsrc = %s\nnb = %d\n\n", dest, src, size);
-	result = ft_strlcat(dest, src, size);
-	printf("dest (cat) = %s\nresult = %d\n-----\n", dest, result);
+	tamanho = ft_strlcat(dest, src, size);
+	printf("Destino = %s\nTamanho = %d", dest, tamanho);
 
 	return (0);
 }
