@@ -1,47 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:31:05 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:01:40 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/06 19:01:26 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/06 19:01:47 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void	print(int nb)
-{
-	char	c;
-
-	c = nb + '0';
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb >= 0 && nb <= 9)
-	{
-		print(nb);
-		return ;
-	}
-	ft_putnbr(nb / 10);
-	ft_putnbr(nb % 10);
-}
 /*
-int	main(void)
+int	ft_ten_queens_puzzle(void)
 {
-	ft_putnbr(-2147483648);
 }*/

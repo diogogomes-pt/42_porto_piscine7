@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:45:57 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:19:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/06 18:50:03 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/06 19:00:56 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
-	int	sinal;
-	int	total;
 
-	i = 0;
-	sinal = 0;
-	total = 0;
-	while ((str[i] != '\0') && (str[i] < '0' || str[i] > '9'))
+	if (nb <= 1)
+		return (0);
+	i = 2;
+	while (i < nb)
 	{
-		if (str[i] == '-')
-			sinal++;
+		if ((nb % i) == 0)
+			return (0);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (ft_is_prime(nb) == 1)
+		return (nb);
+	else
 	{
-		total = total * 10 + str[i] - '0';
-		i++;
+		while (ft_is_prime(nb) != 1)
+			nb++;
+		return (nb);
 	}
-	if (sinal % 2 == 1)
-		return (total * -1);
-	return (total);
 }
 /*
 #include <stdio.h>
-int	main(void)
+#include <stdlib.h>
+int	main(int argc, char **argv)
 {	
-	printf("%d", ft_atoi("--+--+1234ab567"));
+	if (argc != 2)
+		return (0);
+	else
+		printf("%d", ft_find_next_prime(atoi(argv[1])));
 }*/

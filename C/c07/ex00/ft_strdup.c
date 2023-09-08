@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:45:57 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:19:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/07 20:09:10 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/07 20:43:50 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	sinal;
-	int	total;
+	int		i;
+	int		j;
+	char	*ptr;
 
 	i = 0;
-	sinal = 0;
-	total = 0;
-	while ((str[i] != '\0') && (str[i] < '0' || str[i] > '9'))
-	{
-		if (str[i] == '-')
-			sinal++;
+	while (src[i] != '\0')
 		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
+	ptr = malloc(sizeof(src) * i);
+	j = 0;
+	if (ptr == NULL)
+		return (0);
+	else
 	{
-		total = total * 10 + str[i] - '0';
-		i++;
+		while (src[j] != '\0')
+		{
+			ptr[j] = src[j];
+			j++;
+		}
+		ptr[j] = '\0';
+		return (ptr);
 	}
-	if (sinal % 2 == 1)
-		return (total * -1);
-	return (total);
 }
 /*
 #include <stdio.h>
 int	main(void)
-{	
-	printf("%d", ft_atoi("--+--+1234ab567"));
+{
+	printf("%s", ft_strdup("fafa"));
 }*/

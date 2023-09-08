@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:45:57 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:19:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/06 17:28:08 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/06 18:35:43 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_sqrt(int nb)
 {
-	int	i;
-	int	sinal;
-	int	total;
+	int	number;
 
-	i = 0;
-	sinal = 0;
-	total = 0;
-	while ((str[i] != '\0') && (str[i] < '0' || str[i] > '9'))
-	{
-		if (str[i] == '-')
-			sinal++;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		total = total * 10 + str[i] - '0';
-		i++;
-	}
-	if (sinal % 2 == 1)
-		return (total * -1);
-	return (total);
+	number = 0;
+	if (nb > 2147395600 || nb <= 0)
+		return (0);
+	while ((number * number) < nb)
+		number++;
+	if ((number * number) == nb)
+		return (number);
+	else
+		return (0);
 }
 /*
+#include <stdlib.h>
 #include <stdio.h>
-int	main(void)
+int	main(int argc, char **argv)
 {	
-	printf("%d", ft_atoi("--+--+1234ab567"));
+	if (argc != 2)
+		return (0);
+	else
+		printf("%d", ft_sqrt(atoi(argv[1])));
 }*/

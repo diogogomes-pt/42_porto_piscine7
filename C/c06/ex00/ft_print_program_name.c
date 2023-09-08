@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:45:57 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:19:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/07 15:29:03 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/07 15:39:14 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include <unistd.h>
+
+void	putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	sinal;
-	int	total;
 
-	i = 0;
-	sinal = 0;
-	total = 0;
-	while ((str[i] != '\0') && (str[i] < '0' || str[i] > '9'))
+	if (argc != 0)
 	{
-		if (str[i] == '-')
-			sinal++;
-		i++;
+		i = 0;
+		while (argv[0][i] != '\0')
+		{
+			putchar(argv[0][i]);
+			i++;
+		}
+		putchar('\n');
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		total = total * 10 + str[i] - '0';
-		i++;
-	}
-	if (sinal % 2 == 1)
-		return (total * -1);
-	return (total);
+	else
+		return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{	
-	printf("%d", ft_atoi("--+--+1234ab567"));
-}*/

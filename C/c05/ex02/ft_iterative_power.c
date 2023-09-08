@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomes-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:45:57 by dgomes-a          #+#    #+#             */
-/*   Updated: 2023/09/05 20:19:27 by dgomes-a         ###   ########.fr       */
+/*   Created: 2023/09/05 21:41:54 by dgomes-a          #+#    #+#             */
+/*   Updated: 2023/09/06 01:56:38 by dgomes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_iterative_power(int nb, int power)
 {
-	int	i;
-	int	sinal;
 	int	total;
+	int	c;
 
-	i = 0;
-	sinal = 0;
-	total = 0;
-	while ((str[i] != '\0') && (str[i] < '0' || str[i] > '9'))
+	c = 0;
+	total = 1;
+	if (power < 0)
+		return (0);
+	if (power == 0 && nb == 0)
+		return (1);
+	while (c < power)
 	{
-		if (str[i] == '-')
-			sinal++;
-		i++;
+		total *= nb;
+		c++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		total = total * 10 + str[i] - '0';
-		i++;
-	}
-	if (sinal % 2 == 1)
-		return (total * -1);
 	return (total);
 }
 /*
 #include <stdio.h>
-int	main(void)
-{	
-	printf("%d", ft_atoi("--+--+1234ab567"));
-}*/
+int	main(int argc, char **argv)
+{
+	if (argc != 2)
+		return (0);
+	else
+		printf("%d", ft_iterative_power(argv[1][0] - '0', argv[1][3] - '0'));
+}
+*/
